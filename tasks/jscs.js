@@ -55,12 +55,14 @@ module.exports = function( grunt ) {
 
                 if ( errorCount > 0 ) {
                     grunt.log.ok( errorCount + " code style errors found!" );
+
+                    done( false );
                 } else {
                     // Shows the number of OK files, as per #5
                     grunt.log.ok( files.length + " files without code style errors." );
-                }
 
-                done();
+                    done( true );
+                }
             }
         }
 
